@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Nuestras Tablas</title>
+<link href="../static/css/bootstrap.css" rel="stylesheet"
+	th:href="@{/css/bootstrap.css}">
+</head>
+<body>
+
+	<div class="container">
+
+		<div class="container-xxl py-5">
+			<div class="container">
+				<div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s"
+					style="max-width: 500px;">
+					<h1 class="display-5 mb-5">Proyecto Inetum</h1>
+				</div>
+				<div class="row g-4">
+					<div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+						<div class="service-item rounded d-flex h-100">
+							<div class="service-text rounded p-5">
+								<h4 class="mb-3">Empleados</h4>
+								<p class="mb-4">Accede a la información de nuestros
+									empleados</p>
+								<a th:href="@{/empleados}" class="btn btn-primary">Accede al portal
+									Empleados</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+						<div class="service-item rounded d-flex h-100">
+							<div class="service-text rounded p-5">
+								<h4 class="mb-3">Proyectos</h4>
+								<p class="mb-4">Accede a la información de nuestros
+									proyectos</p>
+								<a th:href="@{/proyectos}" class="btn btn-primary">Accede al portal
+									Proyectos</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+						<div class="service-item rounded d-flex h-100">
+							<div class="service-text rounded p-5">
+								<h4 class="mb-3">Tareas</h4>
+								<p class="mb-4">Accede a la información de nuestras
+									tareas pendientes</p>
+								<a th:href="@{/tareas}" class="btn btn-primary">Accede al portal 
+									Tareas</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Nuestras Tablas</title>
+<link href="../static/css/bootstrap.css" rel="stylesheet"
+	th:href="@{/css/bootstrap.css}">
+</head>
+<body>
+
+	<div class="container">
+
+		<h1>Lista de Tareas</h1>
+
+		<a th:href="@{/tareas/createtask}" class="btn btn-primary">Crear
+			nueva Tarea</a>
+		<table class="table">
+			<thead>
+				<tr>
+					<th scope="col">ID</th>
+					<th scope="col">Nombre</th>
+					<th scope="col">Descripcion</th>
+					<th scope="col">Plazo</th>
+					<th scope="col">Editar</th>
+					<th scope="col">Eliminar</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="task:${tasks}">
+					<td th:text="${task.id}"></td>
+					<td th:text="${task.nombre}"></td>
+					<td th:text="${task.descripcion}"></td>
+					<td th:text="${task.plazo}"></td>
+					<td><a th:href="@{/tareas/edittask/{id} (id=${task.id})  }" class="btn btn-warning">Editar Tarea</a></td>
+					<td><a th:href="@{/tareas/delete/{id} (id=${task.id})  }" class="btn btn-danger">Eliminar Tarea</a></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+
+</body>
+</html>

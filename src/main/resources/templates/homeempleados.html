@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Nuestras Tablas</title>
+<link href="../static/css/bootstrap.css" rel="stylesheet"
+	th:href="@{/css/bootstrap.css}">
+</head>
+<body>
+
+	<div class="container">
+
+		<h1>Lista de Empleados</h1>
+
+		<a th:href="@{/empleados/createemployee}" class="btn btn-primary">Crear nuevo Empleado</a>
+		<table class="table">
+			<thead>
+				<tr>
+					<th scope="col">Id</th>
+					<th scope="col">Nombre</th>
+					<th scope="col">Apellido</th>
+					<th scope="col">Dirección</th>
+					<th scope="col">Acción</th>
+					<th scope="col">Acción</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="employee:${employees}">
+					<td th:text="${employee.id}"></td>
+					<td th:text="${employee.nombre}"></td>
+					<td th:text="${employee.apellido}"></td>
+					<td th:text="${employee.direccion}"></td>
+					<td><a th:href="@{/empleados/editemployee/{id} (id=${employee.id})  }" class="btn btn-warning">Editar Empleado</a></td>
+					<td><a th:href="@{/empleados/delete/{id} (id=${employee.id})  }" class="btn btn-danger">Eliminar Empleado</a></td>
+				</tr>
+			</tbody>
+
+		</table>
+	</div>
+	
+	
+	
+</body>
+</html>

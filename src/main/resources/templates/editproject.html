@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Editar Proyecto</title>
+<link href="../static/css/bootstrap.css" rel="stylesheet"
+	th:href="@{/css/bootstrap.css}">
+</head>
+<body>
+
+	<div class="container">
+
+		<h1>Editar Proyecto</h1>
+
+		<form th:action="@{/proyectos/save}" method="post">
+			<input type="hidden" name="id" th:value="${project.id}">
+
+			<div class="mb-3">
+				<label for="formGroupExampleInput" class="form-label">Modificar
+					nombre </label> <input type="text" class="form-control"
+					id="formGroupExampleInput" name="nombre"
+					th:value="${project.nombre}">
+			</div>
+			<div class="mb-3">
+				<label for="formGroupExampleInput2" class="form-label">Modificar
+					descripcion</label> <input type="text" class="form-control"
+					id="formGroupExampleInput2" name="descripcion"
+					th:value="${project.descripcion}">
+			</div>
+			<div class="mb-3">
+				<label for="formGroupExampleInput2" class="form-label">Modificar
+					precio </label> <input type="text" class="form-control"
+					id="formGroupExampleInput2" name="precio"
+					th:value="${project.precio}">
+			</div>
+
+			<button type="submit" class="btn btn-success">Actualizar</button>
+		</form>
+
+
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Editar Empleado</title>
+<link href="../static/css/bootstrap.css" rel="stylesheet"
+	th:href="@{/css/bootstrap.css}">
+</head>
+<body>
+
+	<div class="container">
+
+		<h1>Editar Empleado</h1>
+
+		<form th:action="@{/empleados/save}" method="post">
+			<input type="hidden" name="id" th:value="${employee.id}">
+
+			<div class="mb-3">
+				<label for="formGroupExampleInput" class="form-label">Modificar
+					nombre </label> <input type="text" class="form-control"
+					id="formGroupExampleInput" name="nombre"
+					th:value="${employee.nombre}">
+			</div>
+			<div class="mb-3">
+				<label for="formGroupExampleInput2" class="form-label">Modificar
+					apellido</label> <input type="text" class="form-control"
+					id="formGroupExampleInput2" name="apellido"
+					th:value="${employee.apellido}">
+			</div>
+			<div class="mb-3">
+				<label for="formGroupExampleInput2" class="form-label">Modificar
+					direccion </label> <input type="text" class="form-control"
+					id="formGroupExampleInput2" name="direccion"
+					th:value="${employee.direccion}">
+			</div>
+
+			<button type="submit" class="btn btn-success">Actualizar</button>
+		</form>
+
+
+	</div>
+
+</body>
+</html>

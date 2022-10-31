@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Crear Empleado</title>
+<link href="../static/css/bootstrap.css" rel="stylesheet"
+	th:href="@{/css/bootstrap.css}">
+</head>
+<body>
+
+	<div class="container">
+
+		<h1>Crear Empleado</h1>
+		
+		<form th:action="@{/empleados/save}" method="post">
+		
+			<div class="mb-3">
+				<label for="formGroupExampleInput" class="form-label">Nombre
+					del Empleado</label> <input type="text" class="form-control"
+					id="formGroupExampleInput" name="nombre"
+					placeholder="Escriba el nombre del empleado">
+			</div>
+			<div class="mb-3">
+				<label for="formGroupExampleInput2" class="form-label">Apellido
+					del Empleado </label> <input type="text" class="form-control"
+					id="formGroupExampleInput2" name="apellido"
+					placeholder="Escriba el apellido del empleado">
+			</div>
+			<div class="mb-3">
+				<label for="formGroupExampleInput2" class="form-label">Dirección
+					del Empleado </label> <input type="text" class="form-control"
+					id="formGroupExampleInput2" name="direccion"
+					placeholder="Escriba la dirección del empleado">
+			</div>
+			
+			<button type="submit" class="btn btn-success">Guardar</button>
+		</form>
+
+
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Nuestras Tablas</title>
+<link href="../static/css/bootstrap.css" rel="stylesheet"
+	th:href="@{/css/bootstrap.css}">
+</head>
+<body>
+
+	<div class="container">
+
+		<h1>Lista de Proyectos</h1>
+
+		<a th:href="@{/proyectos/createproject}" class="btn btn-primary">Crear nuevo Proyecto</a>
+		<table class="table">
+			<thead>
+				<tr>
+					<th scope="col">Id</th>
+					<th scope="col">Nombre</th>
+					<th scope="col">descripcion</th>
+					<th scope="col">precio</th>
+					<th scope="col">Acción</th>
+					<th scope="col">Acción</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="project:${projects}">
+					<td th:text="${project.id}"></td>
+					<td th:text="${project.nombre}"></td>
+					<td th:text="${project.descripcion}"></td>
+					<td th:text="${project.precio}"></td>
+					<td><a th:href="@{/proyectos/editproject/{id} (id=${project.id})  }" class="btn btn-warning">Editar Empleado</a></td>
+					<td><a th:href="@{/proyectos/delete/{id} (id=${project.id})  }" class="btn btn-danger">Eliminar Empleado</a></td>
+				</tr>
+			</tbody>
+
+		</table>
+	</div>
+	
+	
+	
+</body>
+</html>
