@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 
 @Controller
-@RequestMapping("/proyectoInetum")
+@RequestMapping("")
 public class ApiController {
 	
 	
